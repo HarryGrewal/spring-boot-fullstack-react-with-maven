@@ -1,3 +1,20 @@
+Restfull api is supported (POST only) at
+https://rextester.com/rundotnet/api.
+What needs to be supplied are these values (as http data name=val&name2=val2, content type header must not indicate json):
+    LanguageChoice=Language number (see below)
+    Program=Code to run
+    Input=Input to be supplied to stdin of a process
+    CompilerArgs=compiler args as one string (when applicable)
+Returned is json string with the following properties:
+    Result=Output of a program (in case of Sql Server - html)
+    Warnings=Warnings, if any, as one string
+    Errors=Errors, if any, as one string
+    Stats=Execution stats as one string
+    Files=In case of Octave and R - list of png images encoded as base64 strings
+
+
+Accepted code template -> class name must be Rextester
+--------------------------------------------------------------------------------------------------
 import java.util.*;
 import java.lang.*;
 import java.io.*;
@@ -9,6 +26,10 @@ class Rextester {
 
         System.out.println("Hello, World!");
     }
+
+}
+--------------------------------------------------------------------------------------------------
+
     // for ReverseInteger :input - 123 output 321
     // for ReverseString :input - 123 output 321
     // for PalindromeNumber :input - 121 output true
@@ -16,13 +37,23 @@ class Rextester {
     // for FizzBuzz :input 15 output ["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
     // end
 
-}
-
 
 // post body type json @ https://rextester.com/rundotnet/api
 {
    "LanguageChoice":"4",
-   "Program":"",
-   "Input":"121",
+   "Program":"ReverseInteger program body",
+   "Input":"123",
    "CompilerArgs":""
 }
+
+// response body type json
+
+{
+    "Warnings": null,
+    "Errors": null,
+    "Result": "321\n",
+    "Stats": "Compilation time: 0.83 sec, absolute running time: 0.25 sec, cpu time: 0.2 sec, memory peak: 37 Mb, absolute service time: 1,21 sec",
+    "Files": null,
+    "NotLoggedIn": false
+}
+
