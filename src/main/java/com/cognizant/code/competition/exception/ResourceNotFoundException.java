@@ -1,4 +1,4 @@
-package com.cognizant.fullstack.test.springbootfullstackreactwithmaven.exception;
+package com.cognizant.code.competition.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

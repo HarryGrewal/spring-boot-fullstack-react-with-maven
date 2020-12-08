@@ -1,8 +1,4 @@
-package com.cognizant.fullstack.test.springbootfullstackreactwithmaven.model;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package com.cognizant.code.competition.model;
 
 import javax.persistence.*;
 

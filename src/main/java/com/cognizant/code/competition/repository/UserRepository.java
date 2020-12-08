@@ -1,6 +1,6 @@
-package com.cognizant.fullstack.test.springbootfullstackreactwithmaven.repository;
+package com.cognizant.code.competition.repository;
 
-import com.cognizant.fullstack.test.springbootfullstackreactwithmaven.model.User;
+import com.cognizant.code.competition.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.cognizant.fullstack.test.springbootfullstackreactwithmaven.model;
+package com.cognizant.code.competition.model;
 
 import javax.persistence.*;
 

@@ -1,10 +1,10 @@
-package com.cognizant.fullstack.test.springbootfullstackreactwithmaven;
+package com.cognizant.code.competition;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootFullstackReactWithMavenApplicationTests {
+class CodeCompetitionApplicationTests {
 
 	@Test
 	void contextLoads() {

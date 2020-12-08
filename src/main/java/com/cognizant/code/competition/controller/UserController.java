@@ -1,7 +1,7 @@
-package com.cognizant.fullstack.test.springbootfullstackreactwithmaven.controller;
+package com.cognizant.code.competition.controller;
 
-import com.cognizant.fullstack.test.springbootfullstackreactwithmaven.model.User;
-import com.cognizant.fullstack.test.springbootfullstackreactwithmaven.repository.UserRepository;
+import com.cognizant.code.competition.model.User;
+import com.cognizant.code.competition.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
