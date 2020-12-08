@@ -1,16 +1,5 @@
 Restfull api is supported (POST only) at
 https://rextester.com/rundotnet/api.
-What needs to be supplied are these values (as http data name=val&name2=val2, content type header must not indicate json):
-    LanguageChoice=Language number (see below)
-    Program=Code to run
-    Input=Input to be supplied to stdin of a process
-    CompilerArgs=compiler args as one string (when applicable)
-Returned is json string with the following properties:
-    Result=Output of a program (in case of Sql Server - html)
-    Warnings=Warnings, if any, as one string
-    Errors=Errors, if any, as one string
-    Stats=Execution stats as one string
-    Files=In case of Octave and R - list of png images encoded as base64 strings
 
 
 Accepted code template -> class name must be Rextester
