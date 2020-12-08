@@ -19,9 +19,9 @@ public class SpringBootFullstackReactWithMavenApplication implements CommandLine
 
 	@Override
 	public void run(String... args) throws Exception {
-		this.userRepository.save(new User("Harry", "harbans_grewal@hotmail.com"));
-		this.userRepository.save(new User("Tom", "tom_cruise@yahoo.com"));
-		this.userRepository.save(new User("Tony", "tony@gmail.com"));
+		this.userRepository.save(new User("Harry", "test", "harbans_grewal@hotmail.com"));
+		this.userRepository.save(new User("Tom","test", "tom_cruise@yahoo.com"));
+		this.userRepository.save(new User("Tony", "test","tony@gmail.com"));
 
 	}
 }
