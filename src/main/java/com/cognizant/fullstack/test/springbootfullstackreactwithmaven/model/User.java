@@ -25,10 +25,10 @@ public class User {
 
     public User() { }
 
-    public User(String name, String email, String password) {
+    public User(String name, String password, String email) {
         this.name = name;
-        this.email = email;
         this.password = password;
+        this.email = email;
     }
 
     public long getId() {
