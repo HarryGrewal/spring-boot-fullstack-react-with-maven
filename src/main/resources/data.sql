@@ -1,14 +1,4 @@
-DROP TABLE IF EXISTS task;
-
-CREATE TABLE task
-(
-    task        VARCHAR(250) PRIMARY KEY,
-    description VARCHAR(1000) NOT NULL,
-    testInput   VARCHAR(250)  NOT NULL,
-    testOutput  VARCHAR(250)  NOT NULL
-);
-
-insert into task(task, description, testInput, testOutput)
+insert into TASK(TASK, DESCRIPTION, TEST_INPUT, TEST_OUTPUT)
 values ('Fizz Buzz',
         'Write a program that outputs the string representation of numbers from 1 to n. ' ||
         'But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. ' ||
