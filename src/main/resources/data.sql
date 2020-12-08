@@ -7,7 +7,7 @@ values ('Fizz Buzz',
         'Input: 15 ' ||
         'Output: ["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"] ',
         '15',
-        '["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]'),
+        '["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]\n'),
        ('Palindrome Number',
         'Determine whether an integer is a palindrome. ' ||
         'An integer is a palindrome when it reads the same backward as forward. ' ||
@@ -15,7 +15,7 @@ values ('Fizz Buzz',
         'Input: 121 ' ||
         'Output: true ',
         '121',
-        'true'),
+        'true\n'),
        ('Fibonacci Number',
         'The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, ' ||
         'such that each number is the sum of the two preceding ones, starting from 0 and 1. ' ||

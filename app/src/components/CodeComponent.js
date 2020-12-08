@@ -9,11 +9,13 @@ class CodeComponent extends Component {
     }
 
     render() {
-        return <div>
-            <h2 className={"textarea"}> Code Solution</h2>
+        return (
+            <div>
+            <h2> Code Solution</h2>
             <textarea id="code"/>
             <button id="run">Run</button>
-        </div>;
+            </div>
+    );
     }
 }
 
