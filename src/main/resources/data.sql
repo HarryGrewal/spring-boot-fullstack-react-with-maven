@@ -24,20 +24,20 @@ values ('Fizz Buzz',
         'Input: 4 ' ||
         'Output: 3 ',
         '4',
-        '3'),
+        '3\n'),
        ('Reverse Integer',
         'Given a 32-bit signed integer, reverse digits of an integer. ' ||
         'For Example : ' ||
         'Input: 123 ' ||
         'Output: 321 ',
         '123 ',
-        '321 '),
+        '321\n'),
        ('Reverse String',
         ('Write a function that reverses a string. The input string is given as an array of characters char[]. ') ||
         'For Example : ' ||
         'Input: ["h","e","l","l","o"] ' ||
         'Output: ["o","l","l","e","h"] ',
-        ('["h","e","l","l","o"]'),
-        ('["o","l","l","e","h"]'));
+        ('hello'),
+        ('olleh\n'));
 
 

@@ -17,3 +17,12 @@ class Rextester {
     // end
 
 }
+
+
+// post body type json @ https://rextester.com/rundotnet/api
+{
+   "LanguageChoice":"4",
+   "Program":"",
+   "Input":"121",
+   "CompilerArgs":""
+}

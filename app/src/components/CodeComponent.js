@@ -12,7 +12,6 @@ class CodeComponent extends Component {
         return <div>
             <h2 className={"textarea"}> Code Solution</h2>
             <textarea id="code"/>
-
             <button id="run">Run</button>
         </div>;
     }
