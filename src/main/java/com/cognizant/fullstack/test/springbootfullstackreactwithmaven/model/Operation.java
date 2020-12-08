@@ -12,5 +12,5 @@ public class Operation {
 
     private String userId;
     private String taskId;
-    private String output;
+    private String success;
 }
