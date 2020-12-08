@@ -19,11 +19,11 @@ class Rextester {
 }
 --------------------------------------------------------------------------------------------------
 
-    // for ReverseInteger :input - 123 output 321
-    // for ReverseString :input - 123 output 321
-    // for PalindromeNumber :input - 121 output true
-    // for FibonacciNumber :input - 4 output 3
-    // for FizzBuzz :input 15 output ["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]
+    // for ReverseInteger :input - 123 output 321\n
+    // for ReverseString :input - hello output olleh\n
+    // for PalindromeNumber :input - 121 output true\n
+    // for FibonacciNumber :input - 4 output 3\n
+    // for FizzBuzz :input 15 output ["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]\n
     // end
 
 
