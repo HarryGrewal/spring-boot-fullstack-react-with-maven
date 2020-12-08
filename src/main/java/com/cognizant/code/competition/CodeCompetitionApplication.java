@@ -10,18 +10,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CodeCompetitionApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CodeCompetitionApplication.class, args);
-	}
+    @Autowired
+    private UserRepository userRepository;
 
-	@Autowired
-	private UserRepository userRepository;
+    public static void main(String[] args) {
+        SpringApplication.run(CodeCompetitionApplication.class, args);
+    }
 
-	@Override
-	public void run(String... args) throws Exception {
-		this.userRepository.save(new User("Harry", "test", "harbans_grewal@hotmail.com"));
-		this.userRepository.save(new User("Tom","test", "tom_cruise@yahoo.com"));
-		this.userRepository.save(new User("Tony", "test","tony@gmail.com"));
+    @Override
+    public void run(String... args) throws Exception {
+        this.userRepository.save(new User("Harry", "test", "harbans_grewal@hotmail.com"));
+        this.userRepository.save(new User("Tom", "test", "tom_cruise@yahoo.com"));
+        this.userRepository.save(new User("Tony", "test", "tony@gmail.com"));
 
-	}
+    }
 }

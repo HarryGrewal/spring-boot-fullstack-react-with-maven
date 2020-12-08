@@ -1,10 +1,6 @@
 package com.cognizant.code.competition.model.rest;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
@@ -12,17 +8,17 @@ import lombok.Setter;
 @Setter
 @Getter
 public class TaskRequest {
-	
-	private String userName;
+
+    private String userName;
 
     private String languageChoice;
-	
-	private String compilerArgs;
-	
-	private String program;
-	
-	private String testInput;
-	
-	private String testOutput;
-	
+
+    private String compilerArgs;
+
+    private String program;
+
+    private String testInput;
+
+    private String testOutput;
+
 }

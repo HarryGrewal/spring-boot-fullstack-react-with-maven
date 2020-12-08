@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TaskResponse {
 
-	private boolean success;
+    private boolean success;
 }

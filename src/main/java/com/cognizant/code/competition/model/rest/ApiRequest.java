@@ -10,10 +10,10 @@ import lombok.Setter;
 public class ApiRequest {
 
     private String languageChoice;
-	
-	private String compilerArgs;
-	
-	private String program;
-	
-	private String input;
+
+    private String compilerArgs;
+
+    private String program;
+
+    private String input;
 }
