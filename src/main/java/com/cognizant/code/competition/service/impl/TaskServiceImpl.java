@@ -44,7 +44,7 @@ public class TaskServiceImpl implements TaskService {
 
         TaskResponse taskResponse = new TaskResponse();
         try {
-            String postUrl = "https://rextester.com/rundotnet/api";// put in your url
+            String postUrl = "https://rextester.com/rundotnet/api";
             Gson gson = new Gson();
             HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPost post = new HttpPost(postUrl);

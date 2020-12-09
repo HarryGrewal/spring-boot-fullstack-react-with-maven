@@ -7,7 +7,7 @@ values ('Fizz Buzz',
         'Input: 15 ' ||
         'Output: ["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"] ',
         '15',
-        '["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]\n'),
+        '["1", "2","Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz", "13", "14", "FizzBuzz"]'),
        ('Palindrome Number',
         'Determine whether an integer is a palindrome. ' ||
         'An integer is a palindrome when it reads the same backward as forward. ' ||
@@ -15,7 +15,7 @@ values ('Fizz Buzz',
         'Input: 121 ' ||
         'Output: true ',
         '121',
-        'true\n'),
+        'true'),
        ('Fibonacci Number',
         'The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, ' ||
         'such that each number is the sum of the two preceding ones, starting from 0 and 1. ' ||
@@ -24,20 +24,20 @@ values ('Fizz Buzz',
         'Input: 4 ' ||
         'Output: 3 ',
         '4',
-        '3\n'),
+        '3'),
        ('Reverse Integer',
         'Given a 32-bit signed integer, reverse digits of an integer. ' ||
         'For Example : ' ||
         'Input: 123 ' ||
         'Output: 321 ',
         '123 ',
-        '321\n'),
+        '321'),
        ('Reverse String',
         ('Write a function that reverses a string. The input string is given as an array of characters char[]. ') ||
         'For Example : ' ||
         'Input: hello ' ||
         'Output: olleh ',
         ('hello'),
-        ('olleh\n'));
+        ('olleh'));
 
 
