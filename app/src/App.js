@@ -1,14 +1,10 @@
 import './App.css';
-import UserComponent from "./components/UserComponent";
-import SubmissionComponent from "./components/SubmissionComponent";
-import CodeComponent from "./components/CodeComponent";
+import TaskComponent from "./components/TaskComponent";
 
 function App() {
     return (
         <div className="App">
-            <SubmissionComponent/>
-            <CodeComponent/>
-            <UserComponent/>
+            <TaskComponent/>
         </div>
     );
 }

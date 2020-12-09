@@ -1,7 +1,7 @@
 import React from 'react';
-import SubmissionService from "../services/SubmissionService.js";
+import SubmissionService from "../services/TaskService.js";
 
-class SubmissionComponent extends React.Component {
+class TaskComponent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -44,4 +44,4 @@ class SubmissionComponent extends React.Component {
     }
 }
 
-export default SubmissionComponent
+export default TaskComponent
