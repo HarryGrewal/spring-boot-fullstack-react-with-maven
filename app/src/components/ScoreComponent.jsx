@@ -34,6 +34,7 @@ class ScoreComponent extends React.Component {
                             score =>
                                 <tr key={score.userName}>
                                     <td> {score.userName}</td>
+                                    <td> {score.successCount}</td>
                                     <td> {score.tasks}</td>
                                 </tr>
                         )

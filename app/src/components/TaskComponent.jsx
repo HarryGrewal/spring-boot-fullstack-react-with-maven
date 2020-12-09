@@ -79,7 +79,7 @@ class TaskComponent extends Component {
         this.state.tasks.map(
             task => (taskList.push(task.name))
         );
-        this.setState(... this.state.task = taskList)
+
         const {errors} = this.state;
         return (
             <div>

@@ -12,8 +12,7 @@ Step 4 - Install axios
 npm install axios 
 
 Step 5 - Resolve CORS policy issue 
-add @CrossOrigin(origins = "http://localhost:3000") to Rest Controller
+add @CrossOrigin(origins = "http://localhost:3000") to Rest Controllers
 
 Step 6 - Configure and bootstrap in memory h2 database
 
-Step 7 - 
