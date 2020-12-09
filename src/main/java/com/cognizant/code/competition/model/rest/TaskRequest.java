@@ -9,15 +9,15 @@ import lombok.*;
 @Getter
 public class TaskRequest {
 
-    private String userName;
+    private long userId;
+
+    private long taskId;
 
     private String languageChoice;
 
     private String compilerArgs;
 
     private String program;
-
-    private String taskId;
 
     private String testInput;
 

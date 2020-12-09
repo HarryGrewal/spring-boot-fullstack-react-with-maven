@@ -4,13 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TaskResponse {
+public class TopScoreResponse {
 
-    private boolean success;
-
-    private String error;
-
+	private String userName;
+	
+	private List<String> tasks;
+	
+	private int successCount;	
+	
 }
