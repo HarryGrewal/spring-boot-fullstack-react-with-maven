@@ -1,6 +1,6 @@
 import React from 'react';
-import Select from 'react-select';
-import SubmissionService from "../services/TaskService.jsx";
+import TaskService from "../services/TaskService.jsx";
+import PropTypes from 'prop-types';
 
 class TaskComponent extends React.Component {
 
@@ -12,17 +12,31 @@ class TaskComponent extends React.Component {
     }
 
     componentDidMount() {
-        SubmissionService.getTasks().then((response) => {
+        TaskService.getTasks().then((response) => {
             this.setState({tasks: response.data});
         });
     }
 
+
+
+
     render() {
+        let taskList = [];
+        this.state.tasks.map(
+            task => (taskList.push(task.name))
+        );
         return (
             <div>
+                {taskList}
             </div>
         )
     }
-}
 
+}
+TaskComponent.defaultProps = {
+        by : 1
+}
+TaskComponent.propTypes = {
+    by: PropTypes.number
+}
 export default TaskComponent;
