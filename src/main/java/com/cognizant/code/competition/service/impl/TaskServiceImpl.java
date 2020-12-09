@@ -3,6 +3,8 @@ package com.cognizant.code.competition.service.impl;
 import java.io.IOException;
 import java.util.List;
 
+import com.cognizant.code.competition.model.User;
+import com.cognizant.code.competition.repository.UserRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -36,6 +38,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Autowired
     private ScoreRepository scoreRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public List<Task> getAllTasks() {
@@ -84,6 +89,7 @@ public class TaskServiceImpl implements TaskService {
                 System.out.println("Result: " + result + " & testOutput: " + taskRequest.getTestOutput() + " is not matching");
             }
 
+
             Score score = populateScoreDetails(taskRequest, taskResponse);
             scoreRepository.save(score);
             System.out.println(error);
@@ -96,7 +102,8 @@ public class TaskServiceImpl implements TaskService {
     private Score populateScoreDetails(TaskRequest taskRequest, TaskResponse taskResponse) {
         Score score = new Score();
         score.setTaskId(taskRequest.getTaskId());
-        score.setUserId(taskRequest.getUserId());
+        final User user = userRepository.findByName(taskRequest.getUserName());
+        score.setUserId(user.getId());
         score.setSuccess(taskResponse.isSuccess());
         return score;
     }

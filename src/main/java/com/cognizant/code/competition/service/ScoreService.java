@@ -7,5 +7,5 @@ import com.cognizant.code.competition.model.rest.TopScoreResponse;
 public interface ScoreService {
 
 	List<TopScoreResponse> listTopScoreDetails();
-	
+
 }

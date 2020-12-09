@@ -9,9 +9,9 @@ import lombok.*;
 @Getter
 public class TaskRequest {
 
-    private long userId;
-
     private long taskId;
+
+    private String userName;
 
     private String languageChoice;
 

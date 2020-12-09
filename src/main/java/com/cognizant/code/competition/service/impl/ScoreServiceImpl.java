@@ -6,6 +6,7 @@ import com.cognizant.code.competition.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,9 +17,22 @@ public class ScoreServiceImpl implements ScoreService {
 
 	@Override
 	public List<TopScoreResponse> listTopScoreDetails() {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> userNames = scoreRepository.findTopUsersBySuccess();
+		System.out.println("userNames" + userNames);
+		List<TopScoreResponse> topScores = new ArrayList<TopScoreResponse>();
+
+
+		for(String name: userNames) {
+			TopScoreResponse response = new TopScoreResponse();
+			List<String> tasks = scoreRepository.findTasksByUserName(name);
+			response.setTasks(tasks);
+			response.setSuccessCount(tasks.size());
+			response.setUserName(name);
+			topScores.add(response);
+		}
+		return topScores;
 	}
+
 
 
 }
