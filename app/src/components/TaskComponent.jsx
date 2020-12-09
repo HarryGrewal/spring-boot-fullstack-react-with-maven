@@ -1,5 +1,5 @@
 import React from 'react';
-import SubmissionService from "../services/TaskService.js";
+import SubmissionService from "../services/TaskService.jsx";
 
 class TaskComponent extends React.Component {
 
@@ -19,7 +19,7 @@ class TaskComponent extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="text-left"> COGNIZANT CHALLENGE</h1>
+                <h1 className="text-center"> COGNIZANT CHALLENGE</h1>
                 <table className="table">
                     <thead>
                     <tr>
@@ -31,7 +31,7 @@ class TaskComponent extends React.Component {
                     {
                         this.state.tasks.map(
                             task =>
-                                <tr key={task.name}>
+                                <tr key={task.id}>
                                     <td> {task.name}</td>
                                     <td> {task.description}</td>
                                 </tr>
