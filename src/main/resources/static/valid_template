@@ -47,7 +47,7 @@ class Rextester {
 }
 
 ****************************************************************************************************
-eExpect data from front end processed by @submitTask
+expect data from front end processed by @submitTask
 
 
 {
@@ -80,3 +80,30 @@ eExpect data from front end processed by @submitTask
    "testOutput":"olleh"
 }
 
+----------------------------------------------------------------------------
+
+{
+    "userName": "lars",
+    "languageChoice": "4",
+    "program": "import java.io.BufferedReader; import java.io.InputStreamReader; import java.util.; import java.lang.;  class Rextester {         public static void main(String args[])     {         System.out.println(isPalindrome(new Scanner(System.in).nextLine()));      }      public static boolean isPalindrome(String original) {          String reverse = \"\";         int length = original.length();         for ( int i = length - 1; i >= 0; i-- )             reverse = reverse + original.charAt(i);         if (original.equals(reverse))             return true;         else             return false;      } }",
+    "testInput": "norsk",
+    "compilerArgs": "",
+    "testOutput": "false"
+}
+
+{
+    "success": false
+}
+
+{
+    "userName": "lars",
+    "languageChoice": "4",
+    "program": "import java.io.BufferedReader; import java.io.InputStreamReader; import java.util.; import java.lang.;  class Rextester {         public static void main(String args[])     {         System.out.println(isPalindrome(new Scanner(System.in).nextLine()));      }      public static boolean isPalindrome(String original) {          String reverse = \"\";         int length = original.length();         for ( int i = length - 1; i >= 0; i-- )             reverse = reverse + original.charAt(i);         if (original.equals(reverse))             return true;         else             return false;      } }",
+    "testInput": "malayalam",
+    "compilerArgs": "",
+    "testOutput": "true"
+}
+
+{
+    "success": true
+}
