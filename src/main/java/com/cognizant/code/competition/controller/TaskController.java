@@ -23,11 +23,6 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
-   /* @GetMapping("getTask/{id}")
-    public List<Task> getTaskByName(@PathVariable("id") String id) {
-        return taskRepository.findById(id);
-    }*/
-
     @PostMapping("submitTask")
     public TaskResponse submitTask(@RequestBody TaskRequest taskRequest) throws IOException, InterruptedException {
         return taskService.submitTask(taskRequest);
