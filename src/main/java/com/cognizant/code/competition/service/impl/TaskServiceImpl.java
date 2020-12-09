@@ -26,6 +26,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import static com.cognizant.code.competition.util.Constants.rexterApi;
+
 @Service
 public class TaskServiceImpl implements TaskService {
 
@@ -50,7 +52,7 @@ public class TaskServiceImpl implements TaskService {
 
         TaskResponse taskResponse = new TaskResponse();
         try {
-            String postUrl = "https://rextester.com/rundotnet/api";// put in your url
+            String postUrl = rexterApi;
             Gson gson = new Gson();
             HttpClient httpClient = HttpClientBuilder.create().build();
             HttpPost post = new HttpPost(postUrl);

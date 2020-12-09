@@ -17,8 +17,7 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-    private String task;
+    private String name;
     private String description;
     private String testInput;
     private String testOutput;

@@ -29,9 +29,9 @@ class Rextester {
 
 // post body type json @ https://rextester.com/rundotnet/api
 {
-   "LanguageChoice":"4",
-   "Program":"ReverseInteger program body",
-   "Input":"123",
+   "LanguageChoice":"",
+   "Program":"",
+   "Input":"",
    "CompilerArgs":""
 }
 
