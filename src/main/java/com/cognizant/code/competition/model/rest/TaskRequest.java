@@ -17,6 +17,8 @@ public class TaskRequest {
 
     private String program;
 
+    private String taskId;
+
     private String testInput;
 
     private String testOutput;
