@@ -3,7 +3,7 @@ import axios from 'axios'
 const TASKS_REST_GET_API_URL = 'http://localhost:8080/task/getAllTasks';
 const TASKS_REST_POST_API_URL = 'http://localhost:8080/task/submitTask';
 
-class TaskService {
+class SubmitService {
 
     getTasks() {
         return axios.get(TASKS_REST_GET_API_URL);
@@ -14,4 +14,4 @@ class TaskService {
     }
 }
 
-export default new TaskService();
+export default new SubmitService();

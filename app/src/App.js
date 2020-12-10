@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HeaderComponent from './components/HeaderComponent';
-import TaskComponent from './components/TaskComponent';
 import ScoreComponent from './components/ScoreComponent';
+import SubmitComponent from "./components/SubmitComponent";
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
                 <HeaderComponent />
                 <div className="container">
                     <Switch>
-                        <Route path="/" exact component={TaskComponent}></Route>
+                        <Route path="/" exact component={SubmitComponent}></Route>
                         <Route path="/scores" component={ScoreComponent} />
                     </Switch>
                 </div>
