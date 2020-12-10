@@ -87,7 +87,9 @@ class TaskComponent extends Component {
                 "testOutput": this.state.testOutput[2],
             };
             console.log('submission detail => ' + JSON.stringify(userDetail));
-            TaskService.postTask(userDetail).then( response => { });
+            TaskService.postTask(userDetail).then( response => {
+                (response.data.success === true) ? alert("You are a Champ!"):alert(response.data.error);
+            });
         } else {
             alert("Form has errors.")
         }
