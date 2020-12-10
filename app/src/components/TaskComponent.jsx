@@ -81,13 +81,13 @@ class TaskComponent extends Component {
                 "userName": this.state.userName,
                 "languageChoice": "4",
                 "program": this.state.sol,
-                "taskId": this.state.tasks,
+                "taskId": this.state.taskId[2],
                 "compilerArgs": "",
-                "testInput": this.state.testInput,
-                "testOutput": this.state.testInput,
-
+                "testInput": this.state.testInput[2],
+                "testOutput": this.state.testOutput[2],
             };
             console.log('submission detail => ' + JSON.stringify(userDetail));
+            TaskService.postTask(userDetail).then( response => { });
         } else {
             alert("Form has errors.")
         }
@@ -110,29 +110,30 @@ class TaskComponent extends Component {
                                 <form>
                                     <div className="form-group">
                                         <label> Name: </label>
-                                        <input placeholder="Enter you Name" name="userName" className="form-control"
+                                        <input placeholder="Enter you Name" type="text" name="userName" className="form-control"
                                                onChange={this.handleChange}/>
                                         {errors.name.length > 0 &&
                                         <span className='error'>{errors.name}</span>}
                                     </div>
                                     <div className="form-group">
                                         <label> Select Task: </label>
+
                                         <select className="form-control" id="selectTask">
-                                            <option>Fizz Buzz</option>
-                                            <option>Palindrome Number</option>
                                             <option>Fibonacci Number</option>
+                                            <option>Palindrome Number</option>
+                                            <option>Fizz Buzz</option>
                                             <option>Reverse Integer</option>
                                             <option>Reverse String</option>
                                         </select>
                                     </div>
                                     <div className="form-group">
                                         <label> Description: </label>
-                                        <input name="desc" className="form-control"/>
+                                        <textarea name="desc" className="form-control block" rows="5" value={ this.state.desc[2]}/>
                                     </div>
                                     <div className="form-group">
                                         <label> Solution Code </label>
-                                        <input placeholder="Paste your java code here!" name="sol"
-                                               className="form-control"
+                                        <textarea placeholder="Paste your java code here!" name="sol"
+                                               className="form-control" rows="10"
                                                onChange={this.handleChange}/>
                                         {errors.sol.length > 0 &&
                                         <span className='error'>{errors.sol}</span>}

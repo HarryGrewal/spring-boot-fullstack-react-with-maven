@@ -9,8 +9,8 @@ class TaskService {
         return axios.get(TASKS_REST_GET_API_URL);
     }
 
-    postTask() {
-
+    postTask(userDetail) {
+        return axios.post(TASKS_REST_POST_API_URL, userDetail);
     }
 }
 
