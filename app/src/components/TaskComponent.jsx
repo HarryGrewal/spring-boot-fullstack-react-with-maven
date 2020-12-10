@@ -12,10 +12,13 @@ class TaskComponent extends Component {
         super(props);
 
         this.state = {
+            userName: "",
             tasks: [],
-            name: null,
-            task: null,
-            desc: null,
+            task: [],
+            taskId: [],
+            desc: [],
+            testInput: [],
+            testOutput: [],
             sol: null,
             errors: {
                 name: '',
@@ -25,9 +28,25 @@ class TaskComponent extends Component {
 
         this.submitTask = this.submitTask.bind(this);
     }
+
     componentDidMount() {
         TaskService.getTasks().then((response) => {
             this.setState({tasks: response.data});
+            this.setState(this.state.tasks.map(
+                task => (this.state.task.push(task.name))
+            ));
+            this.setState(this.state.tasks.map(
+                task => (this.state.desc.push(task.description))
+            ));
+            this.setState(this.state.tasks.map(
+                task => (this.state.testInput.push(task.testInput))
+            ));
+            this.setState(this.state.tasks.map(
+                task => (this.state.testOutput.push(task.testOutput))
+            ));
+            this.setState(this.state.tasks.map(
+                task => (this.state.taskId.push(task.id))
+            ));
         });
     }
 
@@ -46,7 +65,7 @@ class TaskComponent extends Component {
             case 'sol':
                 errors.sol =
                     value.length < 20
-                        ? 'Code cant be empty'
+                        ? 'Code at least 2 lines'
                         : '';
                 break;
             default:
@@ -59,10 +78,14 @@ class TaskComponent extends Component {
         event.preventDefault();
         if (validateForm(this.state.errors)) {
             let userDetail = {
-                name: this.state.name,
-                task: this.state.task,
-                desc: this.state.desc,
-                sol: this.state.sol
+                "userName": this.state.userName,
+                "languageChoice": "4",
+                "program": this.state.sol,
+                "taskId": this.state.tasks,
+                "compilerArgs": "",
+                "testInput": this.state.testInput,
+                "testOutput": this.state.testInput,
+
             };
             console.log('submission detail => ' + JSON.stringify(userDetail));
         } else {
@@ -75,11 +98,6 @@ class TaskComponent extends Component {
     }
 
     render() {
-        let taskList = [];
-        this.state.tasks.map(
-            task => (taskList.push(task.name))
-        );
-
         const {errors} = this.state;
         return (
             <div>
@@ -92,19 +110,19 @@ class TaskComponent extends Component {
                                 <form>
                                     <div className="form-group">
                                         <label> Name: </label>
-                                        <input placeholder="Enter you Name" name="name" className="form-control"
-                                               onChange={this.handleChange} noValidate/>
+                                        <input placeholder="Enter you Name" name="userName" className="form-control"
+                                               onChange={this.handleChange}/>
                                         {errors.name.length > 0 &&
                                         <span className='error'>{errors.name}</span>}
                                     </div>
                                     <div className="form-group">
                                         <label> Select Task: </label>
                                         <select className="form-control" id="selectTask">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
+                                            <option>Fizz Buzz</option>
+                                            <option>Palindrome Number</option>
+                                            <option>Fibonacci Number</option>
+                                            <option>Reverse Integer</option>
+                                            <option>Reverse String</option>
                                         </select>
                                     </div>
                                     <div className="form-group">
@@ -113,12 +131,13 @@ class TaskComponent extends Component {
                                     </div>
                                     <div className="form-group">
                                         <label> Solution Code </label>
-                                        <input placeholder="Paste your java code here!" name="sol" className="form-control"
-                                               onChange={this.handleChange} noValidate/>
-                                        {errors.sol.length > 20 &&
+                                        <input placeholder="Paste your java code here!" name="sol"
+                                               className="form-control"
+                                               onChange={this.handleChange}/>
+                                        {errors.sol.length > 0 &&
                                         <span className='error'>{errors.sol}</span>}
                                     </div>
-                                    <button className="btn btn-success" onClick={this.submitTask} noValidate>Submit
+                                    <button className="btn btn-success" onClick={this.submitTask}>Submit
                                     </button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)}
                                             style={{marginLeft: "10px"}}>Cancel
