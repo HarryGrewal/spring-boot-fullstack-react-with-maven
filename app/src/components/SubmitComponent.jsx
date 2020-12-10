@@ -34,12 +34,27 @@ class SubmitComponent extends Component {
         });
     }
 
+    onTaskClicked = (event) => {
+        this.setState({description: this.state.tasks.filter((e) => event.target.value === e.name)[0].description});
+    };
+
     onTaskChange = (event) => {
+        event.preventDefault();
         console.log(event.target.value);
         this.setState({taskName: event.target.value});
-        let data = this.state.tasks.filter((e) => this.state.taskName === e.name);
+
+        let data = this.state.tasks.filter((e) => event.target.value === e.name);
+        console.log( "this.state.taskName")
+        console.log( event.target.value)
+        console.log( "this.data");
         console.log(data);
-    };
+        this.setState({id: data[0].id});
+        this.setState({description: data[0].description});
+        this.setState({testInput: data[0].testInput});
+        this.setState({testOutput: data[0].testOutput});
+        };
+
+
     
     submitTask = (event) => {
         event.preventDefault();
@@ -83,14 +98,14 @@ class SubmitComponent extends Component {
                                                className="form-control"
                                                value={this.state.userName}
                                                onChange={this.handleChange}/>
-                                        {errors.name.length > 0 &&
-                                        <span className='error'>{errors.name}</span>}
+                                        {errors.userName.length > 0 &&
+                                        <span className='error'>{errors.userName}</span>}
                                     </div>
 
                                     <div className="form-group">
                                         <label> Select Task: </label>
                                         <select className="form-control" id="selectTask"
-                                                value={this.state.taskName} onChange={this.onTaskChange}>
+                                                value={this.state.taskName}  onClick={this.onTaskClicked} onChange={this.onTaskChange}>
                                             {this.state.tasks.map((task, key) => {
                                                 return <option key={key} value={task.name}>{task.name}</option>;
                                             })}
@@ -100,12 +115,13 @@ class SubmitComponent extends Component {
                                     <div className="form-group">
                                         <label> Description: </label>
                                         <textarea name="description" className="form-control block" rows="5"
-                                                  value={this.state.description} onChange={this.onTaskChange}/>
+                                                  value={this.state.description} onChange={this.handleChange}/>
                                     </div>
                                     <div className="form-group">
                                         <label> Solution Code </label>
                                         <textarea placeholder="Paste your java code here!" name="program"
-                                                  className="form-control" rows="10"/>
+                                                  className="form-control" rows="10"
+                                            value={this.state.program} onChange={this.handleChange}/>
                                         {errors.program.length > 0 &&
                                         <span className='error'>{errors.program}</span>}
                                     </div>
@@ -121,7 +137,6 @@ class SubmitComponent extends Component {
                     </div>
                 </div>
             </div>
-
         )
     }
 
@@ -131,14 +146,14 @@ class SubmitComponent extends Component {
         let errors = this.state.errors;
 
         switch (name) {
-            case 'name':
-                errors.name =
+            case 'userName':
+                errors.userName =
                     (value === '' || value === null)
                         ? 'Name cant be empty'
                         : '';
                 break;
-            case 'sol':
-                errors.sol =
+            case 'program':
+                errors.program =
                     value.length < 20
                         ? 'Code at least 2 lines'
                         : '';
